@@ -1,0 +1,144 @@
+{% extends 'shelf/main.html'%}
+{% load static %}
+{% block content %}
+<div class="offer">
+	<div class="small-container">
+		<div class="row">
+
+			<div class="col-2">
+				<div class="box">
+					<h2 style="color: orange" ;>Request An Item </h2>
+				</div>
+
+
+				<br>
+
+			</div>
+			<a href="{% url 'request' %}" class="btn">Request &#8594; </a>
+		</div>
+	</div>
+</div>
+<div class="search_bar">
+	<div class="form">
+		<form method="get">
+			{{myFilter.form}}
+
+			<button class="btn"> Search </button>
+		</form>
+	</div>
+</div>
+<div class="title">
+	<h2>Items</h2>
+</div>
+<div class="row">
+	{%for i in items%}
+
+	<div class="col-4">
+
+		<img src="{{i.img.url}}">
+		<h4>{{i.name}}</h4>
+
+		<p class="Stock">In Stock: {{i.Stock}}</p>
+
+	</div>
+
+	{% endfor %}
+</div>
+<!-- <div class ="title">
+	<h2>Perishable</h2>
+</div>
+<div class="row">
+	{%for i in items%}
+		{% if i.Tag == Perishable %}
+		<div class="col-4">
+			
+			<img src="images/Nike_Air_Force_1_'07_trainers_in_black.jpg">
+			<h4>{{i.name}}</h4>
+			
+			<p class="Stock">In Stock: {{i.Stock}}</p>
+			
+		</div>
+		{% endif %}
+		{% endfor %}
+</div>
+
+<div class= "more">
+	<a href="{% url 'perishable' %}">more...</a>
+</div>
+<br>
+<hr>
+<div class ="title">
+	<h2>Non-Perishable</h2>
+</div>
+<div class="row">
+	{%for i in items%}
+		{% if i.Tag == Non_perishable %}
+		<div class="col-4">
+			
+			<img src="images/Nike_Air_Force_1_'07_trainers_in_black.jpg">
+			<h4>{{i.name}}</h4>
+			
+			<p class="Stock">In Stock: {{i.Stock}}</p>
+			
+		</div>
+		{% endif %}
+		{% endfor %}
+
+
+</div>
+<div class= "more">
+	<a href="{% url 'non_perishable' %}">more...</a>
+</div>
+<br>
+<hr>
+<div class ="title">
+	<h2>Health</h2>
+</div>
+<div class="row">
+	{%for i in items%}
+		{% if i.Tag == Health %}
+		<div class="col-4">
+			
+			<img src="images/Nike_Air_Force_1_'07_trainers_in_black.jpg">
+			<h4>{{i.name}}</h4>
+			
+			<p class="Stock">In Stock: {{i.Stock}}</p>
+			
+		</div>
+		{% endif %}
+		{% endfor %}
+</div>
+
+<div class= "more">
+	<a href="{% url 'non_perishable' %}">more...</a>
+</div>
+<br>
+<br> -->
+
+<!-- 
+	<div class="page-btn">
+		<span>1</span>
+		<span>2</span>
+		<span>3</span>
+		<span>4</span>
+		<span>&#8594;</span>
+	</div>
+
+</div>
+ -->
+
+<!-- js code for toggle menu -->
+<script>
+	var GetMenuItems = Document.getElementById("MenuItems");
+	MenuItems.style.maxHeight = "0px";
+
+	function MenuToggle() {
+		if (MenuItems.style.maxHeight == "0px") {
+			MenuItems.style.maxHeight = "200px"
+
+		} else {
+			MenuItems.style.maxHeight = "0px"
+		}
+	}
+</script>
+{%endblock%}

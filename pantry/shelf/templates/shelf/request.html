@@ -1,0 +1,77 @@
+{% extends 'shelf/main.html' %}
+
+{% load static %}
+{%block content %}
+
+<style type="text/css">
+	.message{
+		text-align: left;
+		border: 3px solid #ff523b;
+		border-radius: 20px
+
+			}
+	.input{
+		
+		margin:20px;
+		
+
+
+	}
+	
+.block{ 
+	color:	#000000;
+	font-size: 18px;
+	margin:10%;
+}
+
+.social{
+	margin-bottom:50px; 
+}
+.media{
+	margin-left: 30px;
+	margin-bottom: 40px;
+}
+.media img{
+
+	width:40px;
+	filter:grayscale(100%);
+	border-radius: 20px;
+}
+.media img:hover{
+
+	
+	filter:grayscale(0);
+}
+
+
+
+</style>
+<div class="block">
+	<div class=row>
+		<div class="col-2">
+			<form method="POST" action="">
+				{% csrf_token %}
+
+				<div class="message ">
+					<div class="input">
+					 	<b>{{"Name : "}} </b>{{form.name}}
+					</div>
+					<div class="input">
+						<b>{{"brand : "}} </b>{{form.brand}}
+					</div>
+					
+					
+					
+				</div>
+				<div>
+					<input class="btn " type="submit" value="Submit">
+				</div>
+			</form>
+		</div>
+		<div class="col-2">
+			<img src="">
+		</div>
+	</div>
+</div>
+
+{% endblock %}
