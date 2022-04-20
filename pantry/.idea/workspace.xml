@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d236a6d9-253a-4bd6-91f4-30d41a63c192" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/bread.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pantry/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/pantry/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pantry/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/pantry/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pantry/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pantry/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pantry/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/pantry/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/migrations/0002_auto_20220419_2116.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/migrations/0003_item_tags.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/templates/shelf/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/templates/shelf/info.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/templates/shelf/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/templates/shelf/navbar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/templates/shelf/update.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelf/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/app-store.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/instagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/mail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images/snapchat.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="282goRcYOh2G1HQgJIvQyANYlH0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="pantry" type="Python.DjangoServer" factoryName="Django server">
+      <module name="pantry" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d236a6d9-253a-4bd6-91f4-30d41a63c192" name="Changes" comment="" />
+      <created>1650420271077</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650420271077</updated>
+      <workItem from="1650420272184" duration="731000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
