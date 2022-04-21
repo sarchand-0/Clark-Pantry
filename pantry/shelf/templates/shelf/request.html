@@ -2,6 +2,7 @@
 
 {% load static %}
 {%block content %}
+
 <div class="container-fluid">
 	<div class="row">
 
@@ -15,10 +16,12 @@
 				{% csrf_token %}
 				<div class="message ">
 					<div class="input">
-					 	<b>{{"Name : "}} </b>{{form.name}}
+					 	<b>{{"Name : "}} </b>
+						 <input type="text" name="name" maxlength="200" required="" id="id_name">
 					</div>
 					<div class="input">
-						<b>{{"brand : "}} </b>{{form.brand}}
+						<b>{{"brand : "}} </b>
+						<input type="text" name="brand" maxlength="200" required="" id="id_brand">
 					</div>
 					
 					
