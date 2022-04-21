@@ -2,37 +2,27 @@
 
 {% load static %}
 {%block content %}
-<div class="container-fluid">
+<div class="container m-5">
 	<div class="row">
-
-	</div>
-</div>
-
-<div class="block">
-	<div class=row>
-		<div class="col-2">
-			<form method="POST" action="">
+		<div class="col-md-6 border border-danger rounded-3 p-5 mx-auto">
+			<h2 class="text-center">Request and Item</h2>
+			<form method="POST" action=""  class="">
 				{% csrf_token %}
-				<div class="message ">
-					<div class="input">
-					 	<b>{{"Name : "}} </b>{{form.name}}
-					</div>
-					<div class="input">
-						<b>{{"brand : "}} </b>{{form.brand}}
-					</div>
-					
-					
-					
-				</div>
 				<div>
-					<input class="btn " type="submit" value="Submit">
+					<div class="mb-3">
+						<label for="id_name" class="form-label">Name</label>
+						<input type="text" name="name" maxlength="200" required id="id_name" class="form-control" placeholder="Enter Item Name">
+					</div>
+					<div class="mb-3">
+						<label for="id_brand">Brand:</label>
+						<input type="text" name="brand" id="id_brand" maxlength="200" required class="form-control" placeholder="Enter the brand of Item">
+					</div>
+					<div class="text-">
+						<input class="btn btn-success" type="submit" value="Submit">
+					</div>
 				</div>
 			</form>
 		</div>
-		<div class="col-2">
-			<img src="">
-		</div>
 	</div>
 </div>
-
 {% endblock %}
