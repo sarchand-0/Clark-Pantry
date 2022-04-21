@@ -1,29 +1,23 @@
 {% extends 'shelf/main.html' %}
-
-	
 {%block content %}
-
-<div class="row">
-	{%for i in non_perishable_items %}
-		<div class="col-4">
-			
+<div class="container">
+	<div class="row">
+		{%for i in non_perishable_items %}
+		<div class="col-md-4">
 			<img src="images/Nike_Air_Force_1_'07_trainers_in_black.jpg">
 			<h4>{{i.name}}</h4>
 			<div class="rating">
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star-o" ></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
 			</div>
 			<p class="Stock">In Stock: {{i.Stock}}</p>
-			
+
 		</div>
-	
+
 		{% endfor %}
-
-		
-	
+	</div>
+	{% endblock %}
 </div>
-
-{% endblock %}

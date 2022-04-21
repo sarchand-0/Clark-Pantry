@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shelf',
     'django_filters',
+    'fontawesomefree'
 ]
 
 MIDDLEWARE = [

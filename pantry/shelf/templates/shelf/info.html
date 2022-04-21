@@ -1,124 +1,60 @@
 {% extends 'shelf/main.html' %}
 {% load static %}
 
-	
+
 {%block content %}
-<style type="text/css">
-	.message{
-		text-align: left;
-		border: 3px solid #ff523b;
-		border-radius: 20px
-
-			}
-	.input{
-		
-		margin:20px;
-		
-
-
-	}
-	
-.block{ 
-	color:	#000000;
-	font-size: 18px;
-}
-
-.social{
-	margin-bottom:50px; 
-}
-.media{
-	margin-left: 30px;
-	margin-bottom: 40px;
-}
-.media img{
-
-	width:40px;
-	filter:grayscale(100%);
-	border-radius: 20px;
-}
-.media img:hover{
-
-	
-	filter:grayscale(0);
-}
-
-
-
-</style>
-<div class ="title">
-	<h2>Contact Us</h2>
-</div>
-<div class="social">
-	<div class=row>
-		<div class="col-2">
-			<div class="media">
-				<img src="{% static 'images/facebook.png'%}"><b>Clark</b> 
-			</div>
-
-			<div class="media">
-				<img src="{% static 'images/instagram.png'%}"> <b>calrk</b>
-			</div>
-		</div>
-		<div class="col-2">
-			<div class="media">
-				<img src="{% static 'images/snapchat.png'%}">  <b>clark</b>
-			</div>
-			<div class="media">
-				<img src="{% static 'images/mail.png'%}">  <b>clark@clarku.edu</b>
+<div class="container">
+	<h2 class="text-center">Contact Us</h2>
+	<div class="row">
+		<p>Find Us on:</p>
+		<div class="cotainer">
+			<div class="row">
+				<div class="col-md-10">
+					<div class=" d-flex flex-row">
+						<a href="faceebook.com/ClarkUniversityWorcester"><i
+								class="fab fa-facebook fa-2x"></i>/claruku</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="media">
-		
-	</div>
-</div>
-
-<div class="block">
-	<div class=row>
-		<div class="col-2">
-			<form method="POST" action="">
+	<div class="row mx-auto">
+		<div class="col-md-4 mx-auto">
+			<form method="POST" action="" class="form">
 				{% csrf_token %}
-
 				<div class="message ">
-					<div class="input">
-					 	<b>{{"Name : "}} </b>{{form.name}}
+					<div class="input-group">
+						<label class="form-label">{{"Name : "}} </label>
+						<input type="text" class="for-control" name="">
+						
 					</div>
 					<div class="input">
 						<b>{{"Email : "}} </b>{{form.email}}
 					</div>
-					<div class="input">	
+					<div class="input">
 						<b>Message :</b> <br> {{form.message}}
 					</div>
-					
-					
 				</div>
 				<div>
 					<input class="btn " type="submit" value="Submit">
 				</div>
 			</form>
 		</div>
-		<div class="col-2">
-			
-		</div>
 	</div>
 </div>
 {% endblock %}
-
-
-
+</div>
 <!-- js code for toggle menu -->
-<script >
-	var GetMenuItems =Document.getElementById("MenuItems");
-	MenuItems.style.maxHeight="0px";
-	function MenuToggle(){
-		if(MenuItems.style.maxHeight=="0px"){
-			MenuItems.style.maxHeight="200px"
+<script>
+	var GetMenuItems = Document.getElementById("MenuItems");
+	MenuItems.style.maxHeight = "0px";
 
-		}
-	else{
-			MenuItems.style.maxHeight="0px"
+	function MenuToggle() {
+		if (MenuItems.style.maxHeight == "0px") {
+			MenuItems.style.maxHeight = "200px"
+
+		} else {
+			MenuItems.style.maxHeight = "0px"
 		}
 	}
-
-
 </script>
