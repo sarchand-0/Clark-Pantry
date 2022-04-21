@@ -3,31 +3,50 @@
 {% block content %}
 <div class="container-fluid mb-2">
 	<!-- Request item to the pantry -->
-	<div class="row mb-5">
-		<div class="col-md-12">
-			<h2 class="text-center text-danger">Request An Item </h2>
-			<p class="text-center">
-				<a href="{% url 'request' %}" class="btn btn-danger ">Add Your Request Here</a>
-			</p>
+	<div class="row mb-5 p-5 bg-danger">
+		<div class="d-flex flex-row justify-content-start">
+			<div class="left p-2">
+				<p class="display-4 fw-bolder text-light">
+					Want to Add Something <br> to Clark Pantry
+				</p>
+			</div>
+			<div class="right">
+				<div class="card w-100">
+						<h2 class="card-title">Request An Item</h2>
+					<div class="col-md-12">
+						<p class="text-center">
+							<a href="{% url 'request' %}" class="btn btn-light btn-outline-danger">Add Your Request Here</a>
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="card">
+		<div class="col-md-8 text-center d-flex">
+			<form class="form-inline row gx-3 gy-2 align-items-center" role="form" method="get">
+				<div class="col-sm-3">
+					<select name="tags" id="id_tags" class="form-control border border-danger">
+						<option value="All" selected="">All</option>
+						<option value="Perishable">Perishable</option>
+						<option value="Non-perishable">Non-perishable</option>
+						<option value="Health">Health</option>
+					</select>
+				</div>
+				<div class="col-sm-7 mx-auto">
+					<input type="text" name="name" id="id_name" class="form-control border border-danger ml-5">
+				</div>
+				<div class="col-sm-2">
+					<button class="btn btn-danger">Search </button>
+				</div>
+			</form>
 		</div>
 	</div>
 	<!-- Search Bar -->
-	<div class="row mx-auto mb-5">
-		<div class="col-md-12 text-center">
-			<form class="form-inline" role="form" method="get">
-				<select name="tags" id="id_tags">
-					<option value="" selected="">---------</option>
-				  
-					<option value="Perishable">Perishable</option>
-				  
-					<option value="Non-perishable">Non-perishable</option>
-				  
-					<option value="Health">Health</option>
-				  
-				  </select>
-				  <input type="text" name="name" id="id_name">
-				<button class="btn"> Search </button>
-			</form>
+	<div class="container bg-danger">
+		<div class="row mx-auto mb-5">
+
 		</div>
 	</div>
 	<!-- Show Items Available -->
@@ -48,7 +67,7 @@
 							<p class="Stock fw-bold text-center">In Stock: {{i.Stock}}</p>
 						</div>
 					</div>
-					
+
 				</div>
 				{% endfor %}
 			</div>
