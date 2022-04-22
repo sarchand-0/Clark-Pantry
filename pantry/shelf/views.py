@@ -110,5 +110,7 @@ def logoutUser(request):
 	return redirect('login')
 
 login_required(login_url='login')
+
+login_required(login_url='login')
 def donate(request):
 	return render(request,'shelf/donate.html' )

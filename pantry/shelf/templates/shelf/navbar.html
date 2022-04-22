@@ -20,7 +20,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
 		.login {
-			margin-left: 30%;
+			margin-left: 23%;
 		}
 
 	</style>
@@ -51,6 +51,8 @@
 			<li class="nav-item btn btn-light" style="color:black">
 				<a class="nav-link " href="{% url 'info' %}">Contact</a>
 			</li>
+			{% if request.user.is_anonymous %}
+			{% else %}
 			<li class="btn btn-warning " style="color:black">
 				<a class="nav-link" href="{% url 'donate' %}">Donate</a>
 			</li>
@@ -64,6 +66,7 @@
 						<a href="#">User C has requested you an item</a>
 					</div>
 				</button>
+			{% endif %}
 				<style>
 					.dropdown-content {
 						display: none;
