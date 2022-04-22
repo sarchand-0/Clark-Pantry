@@ -2,59 +2,22 @@
 
 
 {%block content %}
-<style type="text/css">
-	.message {
-		text-align: left;
-		border: 3px solid #ff523b;
-		border-radius: 20px
-	}
-
-	.input {
-		margin: 20px;
-
-	}
-
-	.block {
-		color: #000000;
-		font-size: 18px;
-		margin-left: 20%;
-		margin-right: 20%;
-		margin-top: 10%;
-		margin-bottom: 10%;
-		border: 3px solid #E67451;
-		padding: 20px;
-	}
-
-	.social {
-		margin-bottom: 50px;
-	}
-
-	.media {
-		margin-left: 30px;
-		margin-bottom: 40px;
-	}
-
-	.media img {
-
-		width: 40px;
-		filter: grayscale(100%);
-		border-radius: 20px;
-	}
-
-	.media img:hover {
-		filter: grayscale(0);
-	}
-</style>
 {% for update in updates%}
-<div class="block">
-	<div class=row>
-		<div class="col-2">
-			{{update.message}}
-		</div>
-		<div class='date'>
-			{{update.date_created}}
+<div class="container m-5">
+	<div class="row">
+		<div class="col-md-6 mx-auto border border-danger rounded-3 p-5">
+			<p>{{update.message}}</p>
+			<small>{{update.date_created}}</small>
 		</div>
 	</div>
 </div>
+</div>
+
 {% endfor %}
+<div class="cotainer bg-dark">
+	<div class="row g-3 align-items-center ">
+		<div class="col-12"></div>
+	</div>
+
+</div>
 {% endblock %}
