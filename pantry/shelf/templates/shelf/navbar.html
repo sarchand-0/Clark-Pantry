@@ -1,50 +1,77 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg navbar-light bg-danger text-light sticky-top">
-	<div class="container-fluid">
-		<a class="navbar-brand" href="#">
-			<img class="brand-img" height="40px" src="{% static 'images/clark_logo.png' %}">
+
+<head>
+	<title>Welcome to Clark Pantry: Log in to the site</title>
+	<link rel="shortcut icon" href="https://moodle.clarku.edu/theme/image.php/boost/theme/1646829495/favicon" />
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Pantry, Welcome to Clark Pantry" />
+	<link rel="stylesheet" type="text/css"
+		href="https://moodle.clarku.edu/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.css" />
+	<script id="firstthemesheet" type="text/css">
+		/** Required in order to fix style inclusion problems in IE with YUI **/
+	</script>
+	<link rel="stylesheet" type="text/css"
+		href="https://moodle.clarku.edu/theme/styles.php/boost/1646829495_1607948647/all" />
+	<meta name="google-site-verification" content="5W9fS0c3Ap9UVpjq8kCFn3yB4XtuxNdiSx2_EajGLUo" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+	<!-- moodle monitoring -->
+	<meta name="robots" content="noindex" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		.login {
+			margin-left: 50%;}
+	</style>
+</head>
+
+<nav id="page-login-index sticky-top">
+	class="format-site  path-login chrome dir-ltr lang-en_us yui-skin-sam yui3-skin-sam moodle-clarku-edu pagelayout-login course-1 context-1 notloggedin ">
+	<div class="toast-wrapper mx-auto py-0 fixed-top" role="status" aria-live="polite"></div>
+	<div class="fixed-top navbar navbar-light navbar-expand moodle-has-zindex">
+		<div data-region="drawer-toggle" class="d-inline-block mr-3">
+		</div>
+		<a href="{% url 'home' %}" class="navbar-brand 
+                d-none d-sm-inline
+                ">
+			<span class="site-name d-none d-md-inline"><span class="clarku">Clark</span><span class="pipe">|</span><span
+					class="moodle">Pantry</span></span>
 		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
-				<li class="nav-item">
-					<a class="nav-link active text-light" aria-current="page" href="{% url 'home' %}">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link text-light" href="{% url 'info' %}">Info</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link text-light dropdown-toggle" href="#" id="navbarDropdown" role="button"
-						data-bs-toggle="dropdown" aria-expanded="false">
-						Update
-					</a>
-					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<li><a class="dropdown-item" href="#">Update 1</a></li>
-						<li><a class="dropdown-item" href="#">Update2</a></li>
-						<li>
-							<hr class="dropdown-divider">
-						</li>
-						<li><a class="dropdown-item" href="#">Something else here</a></li>
-					</ul>
-				</li>
-			</ul>
-			<ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+		<ul class="navbar-nav d-none d-md-flex">
+			<li class="nav-item btn btn-light" style="color:black">
+				<a class="nav-link active " aria-current="page" href="{% url 'home' %}">Home</a>
+			</li>
+			<li class="nav-item btn btn-light" style="color:black">
+				<a class="nav-link " href="{% url 'info' %}">Info</a>
+			</li>
+			<li class="nav-item btn btn-light" style="color:black">
+				<a class="nav-link" href="{% url 'update' %}">Update</a>
+			</li>
+			<li class="btn btn-light" style="color:black">
+				<a class="nav-link" href="{% url 'donate' %}">Give</a>
+			</li>
+			<li class="btn btn-warning" style="color:black">
+				<a class="nav-link" href="{% url 'request' %}">Request</a>
+			</li>
+	
+		</ul>
+		<div class="login">
+			<ul class="navbar-nav d-none d-md-flex">
+
 				{% if request.user.is_anonymous %}
 				<li class="nav-item">
 					<span><a class="nav-link" href="{% url 'login' %}">Login/ Sign in</a></span>
 				</li>
 				{% else %}
 				<li class="nav-item">
-					<span class="nav-link text-white">{{request.user}}</span>
+					<span id="user_name" class="nav-link ">{{request.user}}</span>
 				</li>
 				<li class="nav-item">
-					<span class=""><a class=" nav-link text-light" href="{% url 'logout' %}">Logout</a></span>
+					<span class="logout"><a class=" nav-link " href="{% url 'logout' %}">Logout</a></span>
 					{% endif %}
 				</li>
 			</ul>
+
 		</div>
 	</div>
 </nav>
+<br><br><br>
