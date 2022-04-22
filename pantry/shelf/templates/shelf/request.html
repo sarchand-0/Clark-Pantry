@@ -14,12 +14,7 @@
 			<form method="POST" action="">
 				{% csrf_token %}
 				<div class="message ">
-					<div class="input">
-					 	<b>{{"Name : "}} </b>{{form.name}}
-					</div>
-					<div class="input">
-						<b>{{"brand : "}} </b>{{form.brand}}
-					</div>
+					{{form}}
 					
 					
 					
