@@ -4,37 +4,203 @@
 {%block content %}
 <div class="container-fluid">
 	<div class="row">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <!-- Donate Start -->
+        <div class="container">
+            <div class="donate" data-parallax="scroll" data-image-src="">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <div class="donate-content">
+                            <div class="section-header">
+                                <p>Donate Now</p>
+                                <h2>Let's donate to needy </h2>
+                            </div>
+                            <div class="donate-text">
+                                <p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="donate-form">
+                            <form>
+                                <div class="control-group">
+                                    <input type="text" class="form-control" placeholder="Name" required="required" />
+                                </div>
+                                <div class="control-group">
+                                    <input type="email" class="form-control" placeholder="Email" required="required" />
+                                </div>
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-custom active">
+                                        <input type="radio" name="options" checked> $10
+                                    </label>
+                                    <label class="btn btn-custom">
+                                        <input type="radio" name="options"> $20
+                                    </label>
+                                    <label class="btn btn-custom">
+                                        <input type="radio" name="options"> $30
+                                    </label>
+                                </div>
+                                <div>
+                                    <button class="btn btn-custom" type="submit">Donate Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Donate End -->
 
-	</div>
-</div>
 
-<div class="block">
-	<div class=row>
-		<div class="col-2">
-			<form method="POST" action="">
-				{% csrf_token %}
-				<div class="message ">
-					<div class="input">
-					 	<b>{{"Name : "}} </b>{{form.name}}
-					</div>
-					<div class="input">
-						<b>{{"brand : "}} </b>{{form.brand}}
-					</div>
-					
-					
-					
-				</div>
-				<div>
-					<input class="btn " type="submit" value="Submit">
-				</div>
-			</form>
-		</div>
-	
-		<div class="col-2">
-			<img src="">
-			
-		</div>
+        
+
+        <!-- Back to top button -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <!-- Pre Loader -->
+       
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/parallax/parallax.min.js"></script>
+        
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+<style>
+
+.section-header p {
+    margin-bottom: 5px;
+    position: relative;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #FDBE33;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 45px;
+    font-weight: 700;
+}
+
+@media (max-width: 991.98px) {
+    .section-header h2 {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .section-header h2 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .section-header h2 {
+        font-size: 35px;
+    }
+}
+
+
+/*******************************/
+/********* Donate CSS **********/
+/*******************************/
+.donate {
+    position: relative;
+    width: 100%;
+    margin: 45px 0;
+    background: rgba(0, 0, 0, .5);
+}
+
+.donate .donate-content {
+    padding: 45px 0 15px 0;
+}
+
+.container .donate {
+    margin: 90px 0;
+}
+
+.container .donate .donate-content {
+    padding: 45px 30px 15px 30px;
+}
+
+.donate .donate-content .section-header {
+    margin-bottom: 30px;
+}
+
+.donate .donate-content .section-header h2 {
+    color: #ffffff;
+}
+
+.donate .donate-text p {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.donate .donate-form {
+    padding: 90px 30px;
+    background: #FDBE33;
+}
+
+.donate .donate-form .control-group {
+    margin-bottom: 15px;
+}
+
+.donate .donate-form .form-control {
+    height: 60px;
+    color: #ffffff;
+    padding: 0 15px;
+    border-radius: 0;
+    border: 1px solid #ffffff;
+    background: transparent;
+}
+
+.donate .donate-form .form-control::placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.donate .donate-form .form-control:-ms-input-placeholder,
+.donate .donate-form .form-control::-ms-input-placeholder {
+    color: #ffffff;
+}
+
+.donate .donate-form .btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.donate .donate-form .btn.btn-custom {
+    padding: 15px 0;
+    width: 100%;
+    height: 60px;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    box-shadow: inset 0 0 0 0 #ffffff;
+}
+
+.donate .donate-form .btn.btn-custom:hover,
+.donate .donate-form .btn.btn-custom.active {
+    color: #FDBE33;
+    border: 1px solid #ffffff;
+    box-shadow: inset 0 0 0 30px #ffffff;
+}
+</style>
 	</div>
+</div>					
 </div>
 <br>
 <br>
