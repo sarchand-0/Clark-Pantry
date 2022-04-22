@@ -27,7 +27,8 @@
 </head>
 
 <nav id="page-login-index sticky-top">
-	class="format-site  path-login chrome dir-ltr lang-en_us yui-skin-sam yui3-skin-sam moodle-clarku-edu pagelayout-login course-1 context-1 notloggedin ">
+	class="format-site path-login chrome dir-ltr lang-en_us yui-skin-sam yui3-skin-sam moodle-clarku-edu
+	pagelayout-login course-1 context-1 notloggedin ">
 	<div class="toast-wrapper mx-auto py-0 fixed-top" role="status" aria-live="polite"></div>
 	<div class="fixed-top navbar navbar-light navbar-expand moodle-has-zindex">
 		<div data-region="drawer-toggle" class="d-inline-block mr-3">
@@ -51,38 +52,81 @@
 			<li class="nav-item btn btn-light" style="color:black">
 				<a class="nav-link" href="{% url 'request' %}">Request</a>
 			</li>
-		
+
 			<li class="btn btn-warning" style="color:black">
 				<a class="nav-link" href="{% url 'donate' %}">Donate</a>
 			</li>
 			<li class="" style="color:black">
-				<button  class="notification">
+				<button class="notification dropdown">
 					<span>Inbox</span>
 					<span class="badge">3</span>
-				</button>	
-				  <style>.notification {
-					background-color: #001affde;
-					color: white;
-					text-decoration: none;
-					padding: 15px 26px;
-					position: relative;
-					display: inline-block;
-					border-radius: 2px;
-				  }
-				  
-				  .notification:hover {
-					background: #001aff65;
-				  }
-				  
-				  .notification .badge {
-					position: absolute;
-					top: 10px;
-					right: -10px;
-					padding: 10px 10px;
-					border-radius: 20%;
-					background: red;
-					color: white;
-				  }</style>		
+					<div class="dropdown-content">
+						<a href="#">User A has requested an item </a>
+						<a href="#">User B has offered you an item</a>
+						<a href="#">User C has requested you an item</a>
+					</div>
+				</button>
+				<style>
+					.dropdown-content {
+						display: none;
+						position: absolute;
+						background-color: #f1f1f1;
+						min-width: 160px;
+						box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+						z-index: 1;
+						left: 50% !important;
+						transform: translate(-50%, 0) !important;
+					}
+
+					.dropdown-content a {
+						color: black;
+						padding: 22px 20px;
+						text-decoration: none;
+						display: block;
+						left: 50% !important;
+					}
+
+					.dropdown-content a:hover {
+						background-color: #ddd;
+
+					}
+
+					.dropdown:hover .dropdown-content {
+						display: block;
+						left: 50% !important;
+
+					}
+
+					.dropdown:hover .dropbtn {
+						background-color: #3e8e41;
+						left: 50% !important;
+
+					}
+
+					.notification {
+						background-color: #001affde;
+						color: white;
+						text-decoration: none;
+						padding: 15px 26px;
+						position: relative;
+						display: inline-block;
+						border-radius: 2px;
+					}
+
+					.notification:hover {
+						background: #001aff65;
+					}
+
+					.notification .badge {
+						position: absolute;
+						top: 10px;
+						right: -10px;
+						padding: 10px 10px;
+						border-radius: 20%;
+						background: red;
+						color: white;
+					}
+				</style>
 			</li>
 		</ul>
 		<div class="login">
@@ -100,11 +144,8 @@
 				</li>
 
 				<li class="nav-item">
-					<!-- <div class="col-md-12"> -->
-						<!-- <p class="text-center"> -->
-						<!-- </p> -->
-					<!-- </div> -->
-					<span class="logout"><a class=" nav-link btn btn-outline-danger" href="{% url 'logout' %}">Logout</a></span>
+					<span class="logout"><a class=" nav-link btn btn-outline-danger"
+							href="{% url 'logout' %}">Logout</a></span>
 				</li>
 				{% endif %}
 			</ul>
