@@ -4,3 +4,9 @@ django-filter==21.1
 fontawesomefree==6.1.1
 Pillow==9.1.0
 sqlparse==0.4.2
+
+
+# python3 -m pip install --user virtualenv
+#  2071  python3 -m venv env
+#  2072  source env/bin/activate
+#  2073  python3 manage.py runserver

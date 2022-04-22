@@ -2,42 +2,70 @@
 
 {% load static %}
 {%block content %}
-<div class="container-fluid">
-	<div class="row">
-
-	</div>
-</div>
-
-<div class="block">
-	<div class=row>
-		<div class="col-2">
+<div class="container-fluid h-50">
+	<div class="row my-5">
+		<div class="col-md-4 mx-auto">
 			<form method="POST" action="">
 				{% csrf_token %}
-				<div class="message ">
-					{{form}}
-					
-					
-					
+				<div class="message">
+					<div class="mb-3">
+						<label>Item Type</label>
+						<select id="a" class="form-control" name="type">
+							<option selected disabled>Selected Item Type</option>
+						</select>
+					</div>
+					<div class="mb-3">
+						<label>Available Items</label>
+						<select id="b" name="name" class="form-control">
+						</select>
+					</div>
 				</div>
-				<div>
-					<input class="btn " type="submit" value="Submit">
+				<div class="text-center">
+					<input class="btn btn-success" type="submit" value="Submit">
 				</div>
 			</form>
-		</div>
-	
-		<div class="col-2">
-			<img src="">
-			
+
 		</div>
 	</div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>	
-<br>
-<br>
-<br>
-<br>
+<script>
+	var allItems = {
+		'perishable': ['Eggs', 'Breads', 'Vegetable', 'Banana', 'Apple'],
+		'nonperishable': ['Lays', 'Jam', 'Juice'],
+		'health': ['sanitary pad', 'first aids']
+	}
+	var itemType = document.getElementById("a");
+	var availableItemType = document.getElementById('b');
+
+	window.onload = function () {
+
+
+		for (i in allItems) {
+			itemType.options[itemType.options.length] = new Option(i, i);
+		}
+	}
+	itemType.onchange = function () {
+		var selected = itemType.options[itemType.selectedIndex].value;
+		for (i in allItems) {
+			if (i === selected) {
+				console.log(availableItemType)
+				removeAllChildNodes(availableItemType) //removeAllChildNodes
+				console.log(availableItemType)
+				for (j in allItems[i]) {
+					availableItemType.options[availableItemType.options.length] = new Option(allItems[i][j],
+						allItems[i][j])
+				}
+				console.log(allItems[i])
+				console.log(availableItemType)
+			}
+
+		}
+	}
+
+	function removeAllChildNodes(parent) {
+		while (parent.firstChild) {
+			parent.removeChild(parent.firstChild);
+		}
+	}
+</script>
 {% endblock %}
