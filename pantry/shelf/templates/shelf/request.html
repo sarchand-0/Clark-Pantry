@@ -8,25 +8,16 @@
 			<form method="POST" action="">
 				{% csrf_token %}
 				<div class="message">
-					<div>
+					<div class="mb-3">
 						<label>Item Type</label>
-						<select id="a" class="form-control">
-							<option value="perishable" selected>perishable</option>
-							<option value="nonperishable" data-sync="2" selected>Non Perishable</option>
-							<option value="health">Health</option>
+						<select id="a" class="form-control" name="type">
+							<option selected disabled>Selected Item Type</option>
 						</select>
 					</div>
-					<div>
+					<div class="mb-3">
 						<label>Available Items</label>
-						<select id="b" class="form-control">
-
+						<select id="b" name="name" class="form-control">
 						</select>
-					</div>
-
-					<div class="input mb-3">
-						<label for="brand">Brand</label>
-						<input type="text" name="brand" id="brand" class="form-control"
-							placeholder="Enter a brand name">
 					</div>
 				</div>
 				<div class="text-center">
@@ -38,36 +29,43 @@
 	</div>
 </div>
 <script>
-	const perishable = [
-		'Eggs',
-		'Breds',
-		'Vegetable'
-	]
-	const nonperishable = [
-		'Lays',
-		'Jam',
-		'Juice'
-	]
+	var allItems = {
+		'perishable': ['Eggs', 'Breads', 'Vegetable', 'Banana', 'Apple'],
+		'nonperishable': ['Lays', 'Jam', 'Juice'],
+		'health': ['sanitary pad', 'first aids']
+	}
+	var itemType = document.getElementById("a");
+	var availableItemType = document.getElementById('b');
 
-	const health = [
-		'sanitary pad',
-		'first aids'
-	]
-	let a = document.getElementById('a')
+	window.onload = function () {
 
-	a.onchange = function () {
-		a.childNodes.forEach(getItemValue(iteam));
+
+		for (i in allItems) {
+			itemType.options[itemType.options.length] = new Option(i, i);
+		}
+	}
+	itemType.onchange = function () {
+		var selected = itemType.options[itemType.selectedIndex].value;
+		for (i in allItems) {
+			if (i === selected) {
+				console.log(availableItemType)
+				removeAllChildNodes(availableItemType) //removeAllChildNodes
+				console.log(availableItemType)
+				for (j in allItems[i]) {
+					availableItemType.options[availableItemType.options.length] = new Option(allItems[i][j],
+						allItems[i][j])
+				}
+				console.log(allItems[i])
+				console.log(availableItemType)
+			}
+
+		}
 	}
 
-
-	function getItemValue(item) {
-		b = document.getElementById('b')
-		if (item.hasAttribute('selected') == 'perishable')
-
-			for (c in perishable){
-				console.log(c)
-				b.appendChild(document.createTextNode(`<select>${c}</select>`))
-			}
+	function removeAllChildNodes(parent) {
+		while (parent.firstChild) {
+			parent.removeChild(parent.firstChild);
+		}
 	}
 </script>
 {% endblock %}
