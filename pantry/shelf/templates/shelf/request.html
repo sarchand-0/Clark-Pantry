@@ -2,47 +2,72 @@
 
 {% load static %}
 {%block content %}
-<div class="container-fluid">
-	<div class="row">
-
-	</div>
-</div>
-
-<div class="block">
-	<div class=row>
-		<div class="col-2">
+<div class="container-fluid h-50">
+	<div class="row my-5">
+		<div class="col-md-4 mx-auto">
 			<form method="POST" action="">
 				{% csrf_token %}
-				<div class="message ">
-					<div class="input">
-					 	<b>{{"Name : "}} </b>{{form.name}}
+				<div class="message">
+					<div>
+						<label>Item Type</label>
+						<select id="a" class="form-control">
+							<option value="perishable" selected>perishable</option>
+							<option value="nonperishable" data-sync="2" selected>Non Perishable</option>
+							<option value="health">Health</option>
+						</select>
 					</div>
-					<div class="input">
-						<b>{{"brand : "}} </b>{{form.brand}}
+					<div>
+						<label>Available Items</label>
+						<select id="b" class="form-control">
+
+						</select>
 					</div>
-					
-					
-					
+
+					<div class="input mb-3">
+						<label for="brand">Brand</label>
+						<input type="text" name="brand" id="brand" class="form-control"
+							placeholder="Enter a brand name">
+					</div>
 				</div>
-				<div>
-					<input class="btn " type="submit" value="Submit">
+				<div class="text-center">
+					<input class="btn btn-success" type="submit" value="Submit">
 				</div>
 			</form>
-		</div>
-	
-		<div class="col-2">
-			<img src="">
-			
+
 		</div>
 	</div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>	
-<br>
-<br>
-<br>
-<br>
+<script>
+	const perishable = [
+		'Eggs',
+		'Breds',
+		'Vegetable'
+	]
+	const nonperishable = [
+		'Lays',
+		'Jam',
+		'Juice'
+	]
+
+	const health = [
+		'sanitary pad',
+		'first aids'
+	]
+	let a = document.getElementById('a')
+
+	a.onchange = function () {
+		a.childNodes.forEach(getItemValue(iteam));
+	}
+
+
+	function getItemValue(item) {
+		b = document.getElementById('b')
+		if (item.hasAttribute('selected') == 'perishable')
+
+			for (c in perishable){
+				console.log(c)
+				b.appendChild(document.createTextNode(`<select>${c}</select>`))
+			}
+	}
+</script>
 {% endblock %}
