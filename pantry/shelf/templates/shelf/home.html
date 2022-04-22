@@ -1,6 +1,11 @@
 {% extends 'shelf/main.html'%}
 {% load static %}
 {% block content %}
+<style>
+	#item_img{
+		height: 100px!important;
+	}
+</style>
 <div class="container-fluid mb-2">
 	<!-- Request item to the pantry -->
 	<div class="row mb-5">
@@ -31,7 +36,7 @@
 							<h4 class="text-center">{{i.name}}</h4>
 						</div>
 						<div class="card-body text-center">
-							<img class="img-responsive" height="100px" src="{{i.img.url}}">
+							<img class="img-responsive" id="item_img" height="100px" src="{{i.img.url}}">
 						</div>
 						<div class="card-footer">
 							<p class="Stock fw-bold text-center">In Stock: {{i.Stock}}</p>

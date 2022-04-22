@@ -1,42 +1,38 @@
 {% extends 'shelf/main.html' %}
 {% load static %}
-
-
 {%block content %}
-<div class="container">
+<div class="container mb-5">
 	<h2 class="text-center">Contact Us</h2>
-	<div class="row">
-		<p>Find Us on:</p>
-		<div class="cotainer">
-			<div class="row">
-				<div class="col-md-10">
-					<div class=" d-flex flex-row">
-						<a href="faceebook.com/ClarkUniversityWorcester"><i
-								class="fab fa-facebook fa-2x"></i>/claruku</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<p class="text-center mb-3">
+		<a href="https://www.instagram.com/firmpantry/"><i class="fab fa-instagram fa-2x"></i></a>
+		<a href="https://www.faceebook.com/ClarkUniversityWorcester/">
+			<i class="fab fa-facebook fa-2x ml-2"></i></a>
+	</p>
+	<p class="text-center fw-bold">
+		-OR Message Us-
+	</p>
+
 	<div class="row mx-auto">
 		<div class="col-md-4 mx-auto">
 			<form method="POST" action="" class="form">
 				{% csrf_token %}
 				<div class="message ">
-					<div class="input-group">
-						<label class="form-label">{{"Name : "}} </label>
-						<input type="text" class="for-control" name="">
-						
+					<div class="">
+						<label class="form-label">Name</label>
+						<input type="text" class="form-control" name="name">
+
 					</div>
 					<div class="input">
-						<b>{{"Email : "}} </b>{{form.email}}
+						<label for="email" class="form-lable">Email:</label>
+						<input type="email" name="email" id="email" class="form-control">
 					</div>
-					<div class="input">
-						<b>Message :</b> <br> {{form.message}}
+					<div class="">
+						<label for="message" class="form-lable">Message</label>
+						<textarea name="message" class="form-control" id="message" cols="9"></textarea>
 					</div>
 				</div>
 				<div>
-					<input class="btn " type="submit" value="Submit">
+					<input class="btn bg-primary text-white mt-3 " type="submit" value="Submit">
 				</div>
 			</form>
 		</div>
