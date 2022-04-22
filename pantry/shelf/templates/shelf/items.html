@@ -1,0 +1,141 @@
+{% extends 'shelf/main.html'%}
+{% load static %}
+{% block content %}
+<style>
+	#item_img{
+		height: 100px!important;
+	}
+	
+	.offer{
+		background:#FCBE11;
+		margin-top:0px;
+		padding: 30px 0;
+		margin-bottom:50px;
+
+
+	}
+	.col-2 .offer-img{
+		width:500px ;
+		padding:50px;
+
+	}
+
+	.small {
+		color:#555;
+	}
+	.container{
+	max-width: 1300px;
+	margin: auto;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+.row{
+	padding-left:3em; 
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content:space-around;
+    
+}
+.col-2{
+	flex-basis: 50%;
+	min-width: 300px;
+
+}
+.col-2 img{
+	width:400px;
+	height:auto;
+	padding:50px 0;
+	
+
+
+
+
+}
+
+.col-2 h1{
+	font-size: 50px;
+	line-height:60px;
+	margin: 25px 0;
+
+}
+.date{
+	font-size: 13px;
+	margin-top:0;
+	text-align: right;
+	color:#ffffff;
+}
+.space{
+	margin:20px;
+}
+
+</style>
+<div class="container-fluid mb-2" style="margin-top:0;">
+	
+    <!-- Search Bar -->
+    <div class="row mx-auto mb-5" >
+        <div class="col-md-12" style="margin-left: 60%;">
+            
+            <form class="form-inline" role="form" method="get" >
+                <label for="id_tags" >Filter</label>
+                    <select name="tags" id="id_tags" >
+                        <option value="" selected="">-------</option>
+                        <option value="Perishable">Perishable</option>
+                        <option value="Non-perishable">Non-perishable</option>
+                        <option value="Health">Health</option>
+                    </select>
+                    &nbsp; &nbsp;
+                <label for="id_tags" >Name </label>
+                <input type="text" name="name" id="id_name" > &nbsp; &nbsp;
+                
+            </form>
+            <br>
+            <button class="btn btn-outline-danger" style="margin-left:15%;"> Search </button>
+            
+            
+        </div>
+    </div>
+	
+	<!-- Show Items Available -->
+	<div class="row mb-5">
+		<h2 class="text-center text-danger">Items</h2>
+		<div class="space"></div>
+		
+		<div class="cotainer">
+			<div class="row">
+				{%for i in items%}
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-tile">
+                            
+							<h4 class="text-center">{{i.name}}</h4>
+						</div>
+						<div class="card-body text-center">
+							<img class="img-responsive" id="item_img" height="100px" src="{{i.img.url}}">
+						</div>
+						<div class="card-footer">
+							<p class="Stock fw-bold text-center">In Stock: {{i.Stock}}</p>
+						</div>
+					</div>
+					
+				</div>
+        
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	var GetMenuItems = Document.getElementById("MenuItems");
+	MenuItems.style.maxHeight = "0px";
+
+	function MenuToggle() {
+		if (MenuItems.style.maxHeight == "0px") {
+			MenuItems.style.maxHeight = "200px"
+
+		} else {
+			MenuItems.style.maxHeight = "0px"
+		}
+	}
+</script>
+{%endblock%}

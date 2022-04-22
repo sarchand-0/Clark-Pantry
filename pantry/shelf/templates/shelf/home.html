@@ -5,28 +5,129 @@
 	#item_img{
 		height: 100px!important;
 	}
+	
+	.offer{
+		background:#FCBE11;
+		margin-top:0px;
+		padding: 30px 0;
+		margin-bottom:50px;
+
+
+	}
+	.col-2 .offer-img{
+		width:500px ;
+		padding:50px;
+
+	}
+
+	.small {
+		color:#555;
+	}
+	.container{
+	max-width: 1300px;
+	margin: auto;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+.row{
+	padding-left:3em; 
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content:space-around;
+}
+.col-2{
+	flex-basis: 50%;
+	min-width: 300px;
+
+}
+.col-2 img{
+	width:400px;
+	height:auto;
+	padding:50px 0;
+	
+
+
+
+
+}
+
+.col-2 h1{
+	font-size: 50px;
+	line-height:60px;
+	margin: 25px 0;
+
+}
+.date{
+	font-size: 13px;
+	margin-top:0;
+	text-align: right;
+	color:#ffffff;
+}
+.space{
+	margin:20px;
+}
+
 </style>
-<div class="container-fluid mb-2">
-	<!-- Request item to the pantry -->
-	<div class="row mb-5">
-		<div class="col-md-12">
-			<p class="text-center">
-				<span class="btn btn-outline-primary">Pantry is Open From 7:00 AM through 12 PM Everyday</span>
-			</p>
+<div class="container-fluid mb-2" style="margin-top:0;">
+	
+	
+	<!-- pantry picture -->
+	<div class="offer">
+		<!-- Request item to the pantry -->
+		<div class="row mb-5">
+			<div class="col-md-12">
+				<p class="text-center">
+					<span class="btn btn-outline-dark"  >Pantry is Open From 7:00 AM through 12 PM Everyday</span>
+				</p>
+			</div>
 		</div>
-	</div>
-	<!-- Search Bar -->
-	<div class="row mx-auto mb-5" >
-		<div class="col-md-12" style="align-items: center;">
-			<form class="form-inline" role="form" method="get">
-				{{myFilter.form}} &nbsp; &nbsp;
-				<button class="btn btn-outline-dark"> Search </button>
-			</form>
+		<!-- Search Bar
+		<div class="row mx-auto mb-5" >
+			<div class="col-md-12" style="align-items: right; margin-left: 100%;">
+				<form class="form-inline" role="form" method="get">
+					<form class="form-inline" role="form" method="get">
+						<label for="id_tags" style="align-items: left;"></label>
+							<select name="tags" id="id_tags">
+								<option value="" selected="">---------</option>
+								<option value="Perishable">Perishable</option>
+								<option value="Non-perishable">Non-perishable</option>
+								<option value="Health">Health</option>
+							</select>
+						<label for="id_name">Name:</label>
+					<input type="text" name="name" id="id_name"> &nbsp; &nbsp;
+						<button class="btn btn-outline-dark"> Search </button>
+					</form>
+					<button class="btn btn-outline-dark"> Search </button>
+				</form>
+			</div>
+		</div> -->
+	<div class="small-container">
+		<div class ="row">
+			{%for i in live%}
+			<div class="date" style="color: #ffffff; margin-right:10%">{{i.date_created}}  </div>
+			<div class = "col-2">
+				<img class="img-responsive"   src="{{i.img.url}}">
+			</div>
+			
+			<div class = "col-2" style="color: #ffffff; " >
+				
+				<h1>Last Picture Taken</h1>
+				
+				<small style="text-align: center;">Look at how the pantry looks at the moment. </small>
+				<br>
+				
+			</div>
+			{% endfor %}
 		</div>
+	</div>		
+	
 	</div>
 	<!-- Show Items Available -->
-	<div class="row mb-5">
+	<!-- <div class="row mb-5">
 		<h2 class="text-center text-danger">Items</h2>
+		<div class="space"></div>
+		
 		<div class="cotainer">
 			<div class="row">
 				{%for i in items%}
@@ -62,4 +163,4 @@
 		}
 	}
 </script>
-{%endblock%}
+{%endblock%} -->

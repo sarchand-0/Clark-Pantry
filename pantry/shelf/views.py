@@ -12,11 +12,20 @@ from django.contrib.auth.decorators import login_required
 
 def home(request):
 	items = Item.objects.all()
+	live=Live.objects.all()
+	myFilter = ItemFilter(request.GET, queryset=items)
+	items=myFilter.qs
+	
+	context= {'items':items,'myFilter':myFilter, 'live':live,}
+	return render(request, 'shelf/home.html', context)
+def items(request):
+	items = Item.objects.all()
+	
 	myFilter = ItemFilter(request.GET, queryset=items)
 	items=myFilter.qs
 	
 	context= {'items':items,'myFilter':myFilter}
-	return render(request, 'shelf/home.html', context)
+	return render(request, 'shelf/items.html', context)
 
 
 def info(request):
