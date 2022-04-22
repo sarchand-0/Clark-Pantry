@@ -20,7 +20,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
 		.login {
-			margin-left: 50%;}
+			margin-left: 45%;}
 	</style>
 </head>
 
@@ -46,13 +46,12 @@
 			<li class="nav-item btn btn-light" style="color:black">
 				<a class="nav-link" href="{% url 'update' %}">Update</a>
 			</li>
-			<li class="btn btn-light" style="color:black">
-				<a class="nav-link" href="{% url 'donate' %}">Give</a>
-			</li>
 			<li class="btn btn-warning" style="color:black">
 				<a class="nav-link" href="{% url 'request' %}">Request</a>
 			</li>
-	
+			<li class="btn btn-light" style="color:black">
+				<a class="nav-link" href="{% url 'request' %}">Give</a>
+			</li>
 		</ul>
 		<div class="login">
 			<ul class="navbar-nav d-none d-md-flex">
@@ -66,7 +65,7 @@
 					<span id="user_name" class="nav-link ">{{request.user}}</span>
 				</li>
 				<li class="nav-item">
-					<span class="logout"><a class=" nav-link " href="{% url 'logout' %}">Logout</a></span>
+					<span class="logout"><a class=" nav-link btn btn-outline-danger" href="{% url 'logout' %}">Logout</a></span>
 					{% endif %}
 				</li>
 			</ul>
