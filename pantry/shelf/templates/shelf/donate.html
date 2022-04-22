@@ -1,0 +1,49 @@
+{% extends 'shelf/main.html' %}
+
+{% load static %}
+{%block content %}
+<div class="container-fluid">
+	<div class="row">
+
+	</div>
+</div>
+
+<div class="block">
+	<div class=row>
+		<div class="col-2">
+			<form method="POST" action="">
+				{% csrf_token %}
+				<div class="message ">
+					<div class="input">
+					 	<b>{{"Name : "}} </b>{{form.name}}
+					</div>
+					<div class="input">
+						<b>{{"brand : "}} </b>{{form.brand}}
+					</div>
+					
+					
+					
+				</div>
+				<div>
+					<input class="btn " type="submit" value="Submit">
+				</div>
+			</form>
+		</div>
+	
+		<div class="col-2">
+			<img src="">
+			
+		</div>
+	</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>	
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}
