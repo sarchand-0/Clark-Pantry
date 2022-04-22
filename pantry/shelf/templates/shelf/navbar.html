@@ -46,11 +46,9 @@
 			<li class="nav-item btn btn-light" style="color:black">
 				<a class="nav-link" href="{% url 'update' %}">Update</a>
 			</li>
+		
 			<li class="btn btn-warning" style="color:black">
-				<a class="nav-link" href="{% url 'request' %}">Request</a>
-			</li>
-			<li class="btn btn-light" style="color:black">
-				<a class="nav-link" href="{% url 'request' %}">Give</a>
+				<a class="nav-link" href="{% url 'donate' %}">Donate</a>
 			</li>
 		</ul>
 		<div class="login">
@@ -61,10 +59,17 @@
 					<span><a class="nav-link" href="{% url 'login' %}">Login/ Sign in</a></span>
 				</li>
 				{% else %}
+				<a href="{% url 'request' %}" class="btn btn-success">Request</a>
+				&nbsp;
 				<li class="nav-item">
 					<span id="user_name" class="nav-link ">{{request.user}}</span>
 				</li>
+
 				<li class="nav-item">
+					<!-- <div class="col-md-12"> -->
+						<!-- <p class="text-center"> -->
+						<!-- </p> -->
+					<!-- </div> -->
 					<span class="logout"><a class=" nav-link " href="{% url 'logout' %}">Logout</a></span>
 				</li>
 				{% endif %}
